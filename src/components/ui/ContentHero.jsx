@@ -3,7 +3,7 @@ import ImageHero from "./ImageHero";
 import SubTitle from "./SubTitle";
 import Title from "./Title";
 
-const Hero = () => {
+const ContentHero = () => {
   return (
     <section>
       <div className="flex flex-col items-center gap-10 pb-20 pt-10 lg:flex-row lg:gap-1.5 lg:pb-24 lg:pt-20 xl:justify-between">
@@ -26,4 +26,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default ContentHero;

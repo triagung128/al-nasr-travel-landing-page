@@ -1,5 +1,5 @@
 import Container from "../ui/Container";
-import Hero from "../ui/Hero";
+import ContentHero from "../ui/ContentHero";
 import Navbar from "../ui/Navbar";
 
 const Header = () => (
@@ -7,7 +7,7 @@ const Header = () => (
     <div className="absolute inset-x-0 -top-16 bottom-0 -z-10 bg-gradient-to-b from-[#FFCE83]/[0] to-[#FFC265]/[0.05]" />
     <Navbar />
     <Container>
-      <Hero />
+      <ContentHero />
     </Container>
   </header>
 );
