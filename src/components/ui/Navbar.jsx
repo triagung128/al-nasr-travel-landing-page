@@ -28,6 +28,18 @@ const Navbar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showMenu]);
+
   return (
     <nav
       className={clsx("sticky top-0 z-50 mt-6 py-4 lg:mt-16", {
@@ -63,24 +75,29 @@ const Navbar = () => {
           <img src={icMenu} />
         </button>
       </Container>
+
+      {/* Div ini digunakan sebagai overlay pada sebuah navbar */}
+      <div
+        className={clsx("fixed inset-0 z-10 bg-black bg-opacity-50", {
+          hidden: !showMenu,
+          block: showMenu,
+        })}
+        onClick={() => setShowMenu((showMenu) => !showMenu)}
+      />
       <div
         className={clsx(
-          "fixed inset-0 z-10 flex h-lvh justify-end bg-black/50",
+          "fixed right-0 top-0 z-20 flex h-dvh w-4/5 transform flex-col items-end gap-8 bg-white p-6 transition-transform duration-300 ease-in-out sm:w-3/5",
           {
-            hidden: !showMenu,
-            block: showMenu,
+            "translate-x-full": !showMenu,
+            "translate-x-0": showMenu,
           },
         )}
       >
-        <div
-          className={clsx(
-            "flex h-full w-4/5 flex-col items-end gap-8 bg-white p-6 sm:w-3/5",
-          )}
-        >
-          <button onClick={() => setShowMenu((showMenu) => !showMenu)}>
-            <img src={icClose} />
-          </button>
-          <ul className="flex w-full flex-col gap-4">
+        <button onClick={() => setShowMenu((showMenu) => !showMenu)}>
+          <img src={icClose} />
+        </button>
+        <div className="w-full overflow-y-auto">
+          <ul className="mb-4 flex w-full flex-col gap-4">
             <NavbarMenuMobile href="" text="Home" />
             <NavbarMenuMobile href="" text="About Us" />
             <NavbarMenuMobile href="" text="Package" />
