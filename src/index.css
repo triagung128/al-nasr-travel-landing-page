@@ -5,3 +5,26 @@
 body {
   @apply font-nunito;
 }
+
+@layer utilities {
+  .mask-layer {
+    -webkit-mask: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+    mask: linear-gradient(
+      90deg,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+
+  .paused {
+    animation-play-state: paused;
+  }
+}

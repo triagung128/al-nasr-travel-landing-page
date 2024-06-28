@@ -12,6 +12,28 @@ export default {
         "black-nav-menu": "#525252",
         "black-button": "#3F3F3F",
       },
+      animation: {
+        scroll: "scroll 50s linear infinite",
+        "scroll-reversed": "scroll-reversed 50s linear infinite",
+      },
+      keyframes: {
+        scroll: {
+          from: {
+            transform: "translateX(-100%)",
+          },
+          to: {
+            transform: "translateX(0)",
+          },
+        },
+        "scroll-reversed": {
+          from: {
+            transform: "translateX(0)",
+          },
+          to: {
+            transform: "translateX(-100%)",
+          },
+        },
+      },
     },
     fontFamily: {
       nunito: ["Nunito", "sans-serif"],
