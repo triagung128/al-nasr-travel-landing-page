@@ -1,5 +1,6 @@
 import About from "./components/layouts/About";
 import Facilities from "./components/layouts/Facilities";
+import Footer from "./components/layouts/Footer";
 import Gallery from "./components/layouts/Gallery";
 import Header from "./components/layouts/Header";
 import Package from "./components/layouts/Package";
@@ -9,11 +10,14 @@ function App() {
   return (
     <>
       <Header />
-      <About />
-      <Package />
-      <Facilities />
-      <Testimoni />
-      <Gallery />
+      <main>
+        <About />
+        <Package />
+        <Facilities />
+        <Testimoni />
+        <Gallery />
+      </main>
+      <Footer />
     </>
   );
 }
