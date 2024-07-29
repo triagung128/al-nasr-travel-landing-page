@@ -1,10 +1,10 @@
-import About from "./components/layouts/About";
-import Facilities from "./components/layouts/Facilities";
-import Footer from "./components/layouts/Footer";
-import Gallery from "./components/layouts/Gallery";
-import Header from "./components/layouts/Header";
-import Package from "./components/layouts/Package";
-import Testimoni from "./components/layouts/Testimoni";
+import About from "./components/About";
+import Facility from "./components/Facility";
+import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
+import Header from "./components/Header";
+import Package from "./components/Package";
+import Testimoni from "./components/Testimoni";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <main>
         <About />
         <Package />
-        <Facilities />
+        <Facility />
         <Testimoni />
         <Gallery />
       </main>
