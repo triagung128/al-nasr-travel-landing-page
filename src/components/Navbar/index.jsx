@@ -78,11 +78,11 @@ const Navbar = () => {
           <img
             src={Logo}
             alt="Logo Al-Nasr"
-            className="w-20 lg:w-24 xl:w-auto"
+            className="w-20 md:w-24 lg:w-28 xl:w-auto"
           />
         </a>
         <div className="hidden lg:block">
-          <ul className="flex flex-1 items-center gap-11">
+          <ul className="flex flex-1 items-center gap-7 xl:gap-11">
             {navLink.map((link, index) => (
               <li key={index}>
                 <a
@@ -106,7 +106,7 @@ const Navbar = () => {
           className="lg:hidden"
           onClick={() => setShowMenu((showMenu) => !showMenu)}
         >
-          <img src={IcMenu} />
+          <img src={IcMenu} className="sm:w-8" />
         </button>
       </Container>
 
@@ -120,7 +120,7 @@ const Navbar = () => {
       />
       <div
         className={clsx(
-          "fixed right-0 top-0 z-20 flex h-dvh w-4/5 transform flex-col items-end gap-8 bg-white p-6 transition-transform duration-300 ease-in-out sm:w-3/5",
+          "fixed right-0 top-0 z-20 flex h-dvh w-4/5 transform flex-col items-end gap-8 bg-white p-6 transition-transform duration-300 ease-in-out sm:px-16",
           {
             "translate-x-full": !showMenu,
             "translate-x-0": showMenu,
@@ -128,7 +128,7 @@ const Navbar = () => {
         )}
       >
         <button onClick={() => setShowMenu((showMenu) => !showMenu)}>
-          <img src={IcClose} />
+          <img src={IcClose} className="sm:w-8" />
         </button>
         <div className="w-full overflow-y-auto">
           <ul className="mb-4 flex w-full flex-col gap-4">

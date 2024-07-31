@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 const PackageCardItem = ({ data = {} }) => {
   {
     return Object.keys(data).length > 0 ? (
-      <div className="w-full rounded-[10px] bg-white py-7 shadow-[0_4px_20px_0_rgba(29,165,153,0.15)]">
+      <div className="w-full rounded-[10px] bg-white py-7 shadow-[0_4px_20px_0_rgba(29,165,153,0.15)] sm:w-[400px] md:w-full">
         <p className="px-[26px]">
           <img
             src={data.image}
@@ -12,10 +12,10 @@ const PackageCardItem = ({ data = {} }) => {
           />
         </p>
         <div className="mb-5 mt-4 flex items-center justify-between pl-[26px]">
-          <p className="text-base font-bold leading-[1.5] text-orange">
+          <p className="text-base font-bold leading-normal text-orange">
             {data.type}
           </p>
-          <p className="rounded-s-full bg-green px-[30px] py-[10px] text-base font-bold leading-[1.5] text-green-dark">
+          <p className="rounded-s-full bg-green px-[30px] py-[10px] text-base font-bold leading-normal text-green-dark">
             {data.category}
           </p>
         </div>
@@ -42,7 +42,7 @@ const PackageCardItem = ({ data = {} }) => {
         </div>
       </div>
     ) : (
-      <div className="hidden w-full items-center justify-center rounded-[10px] bg-white py-7 shadow-[0_4px_20px_0_rgba(29,165,153,0.15)] sm:flex">
+      <div className="hidden w-full items-center justify-center rounded-[10px] bg-white py-7 shadow-[0_4px_20px_0_rgba(29,165,153,0.15)] md:flex">
         <p className="font-kufam text-xl font-semibold text-green-dark">
           Soon Program
         </p>

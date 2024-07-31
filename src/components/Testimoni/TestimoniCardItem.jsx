@@ -24,10 +24,10 @@ const TestimoniCardItem = ({ data }) => (
       <p className="mb-3.5 w-fit rounded-full bg-green px-5 py-2.5 text-sm font-semibold leading-[0.64] text-green-dark">
         {data.package}
       </p>
-      <h6 className="font-kufam text-2xl font-semibold leading-[1.5] text-black-title">
+      <h6 className="font-kufam text-2xl font-semibold leading-normal text-black-title">
         {data.user.name}
       </h6>
-      <p className="text-sm font-medium leading-[1.5] text-black-content">
+      <p className="text-sm font-medium leading-normal text-black-content">
         {data.testimoni}
       </p>
     </div>

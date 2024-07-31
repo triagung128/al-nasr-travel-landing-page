@@ -7,10 +7,10 @@ import TestimoniCardContainer from "./TestimoniCardContainer";
 const TestimoniContent = ({ data }) => {
   return (
     <>
-      <TitleText className="ml-auto text-end md:w-[400px] xl:w-[550px]">
+      <TitleText className="ml-auto text-end lg:w-[550px]">
         {data.title}
       </TitleText>
-      <SubtitleText className="mb-10 ml-auto text-end md:w-[450px] xl:w-[600px]">
+      <SubtitleText className="mb-10 ml-auto text-end sm:w-[450px]">
         {data.subtitle}
       </SubtitleText>
       <TestimoniCardContainer data={data.testimonials1} />

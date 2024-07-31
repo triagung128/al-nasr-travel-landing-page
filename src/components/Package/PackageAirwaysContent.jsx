@@ -6,11 +6,9 @@ import IcStar from "/icons/ic_star.svg";
 
 const PackageAirwaysContent = ({ data }) => (
   <div className="mt-20 flex flex-col items-center">
-    <TitleText className="text-center text-[32px]">{data.title}</TitleText>
-    <SubtitleText className="w-[350px] text-center sm:w-full">
-      {data.subtitle}
-    </SubtitleText>
-    <div className="mt-4 flex w-fit items-center gap-2 rounded-full bg-green px-5 py-2.5">
+    <TitleText className="mb-2 text-center text-[32px]">{data.title}</TitleText>
+    <SubtitleText className="mb-4 text-center">{data.subtitle}</SubtitleText>
+    <div className="flex w-fit items-center gap-2 rounded-full bg-green px-5 py-2.5">
       <img src={IcStar} alt="Rating" />
       <p className="text-xl font-medium text-green-dark">
         {data.rating.toFixed(1)} Rating

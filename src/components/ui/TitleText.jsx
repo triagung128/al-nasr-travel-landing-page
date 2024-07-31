@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const TitleText = ({ children, className }) => (
   <h1
-    className={`font-kufam text-3xl font-bold leading-[1.4] text-black-title xl:text-5xl xl:leading-[1.4] ${className}`}
+    className={`font-kufam text-4xl font-bold leading-[1.4] text-black-title sm:text-5xl sm:leading-[1.4] ${className}`}
   >
     {children}
   </h1>
