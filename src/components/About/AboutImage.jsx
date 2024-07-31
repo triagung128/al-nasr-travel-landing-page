@@ -7,51 +7,49 @@ import ImgUser4 from "/images/about/img_about_photo_user_2.png";
 import Logo from "/logo_bg.png";
 
 const AboutImage = () => (
-  <div className="text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
-    <div className="relative h-[36.938em] w-[31.625em]">
-      <img
-        src={ImgAbout}
-        alt="Image About"
-        className="absolute h-[33.625em] w-[25em]"
-        draggable="false"
-      />
-      <img
-        src={Logo}
-        alt="Logo Text"
-        className="absolute bottom-0 left-[3.575em] h-[4.938em] w-[18.375em]"
-        draggable="false"
-      />
-      <TestimoniAboutImage
-        src={ImgUser3}
-        rating={4.9}
-        name="Sahrul Alqani"
-        className="absolute bottom-[95px] right-[50px]"
-      />
-      <TestimoniAboutImage
-        src={ImgUser4}
-        rating={4.8}
-        name="Ali Humairah"
-        className="absolute right-0 top-[4em]"
-      />
-    </div>
+  <div className="relative h-[451px] w-full flex-shrink-0 sm:h-[551px] sm:w-[466px] md:h-[591px] md:w-[506px]">
+    <img
+      src={ImgAbout}
+      alt="Image About"
+      className="absolute left-1/2 top-0 h-[91%] w-[85%] -translate-x-1/2 rounded-[20px] object-cover sm:left-0 sm:w-[79.1%] sm:-translate-x-0"
+      draggable="false"
+    />
+    <TestimoniAboutImage
+      src={ImgUser4}
+      rating={4.8}
+      name="Ali Humairah"
+      className="absolute top-[42%] sm:right-0 sm:top-[10.8%]"
+    />
+    <TestimoniAboutImage
+      src={ImgUser3}
+      rating={4.9}
+      name="Sahrul Alqani"
+      className="absolute bottom-[16.1%] right-0 sm:right-[9.9%]"
+    />
+    <img
+      src={Logo}
+      alt="Logo Text"
+      className="absolute bottom-0 left-1/2 h-[13.4%] w-[58.1%] -translate-x-1/2 object-contain sm:left-[11%] sm:-translate-x-0 sm:object-fill"
+      draggable="false"
+    />
   </div>
 );
 
 const TestimoniAboutImage = ({ src, rating, name, className }) => (
   <div
-    className={`flex w-[13.25em] items-center gap-[1.875em] rounded-[0.625em] border-[0.063em] border-orange bg-white p-[0.625em] ${className} `}
+    className={`flex w-[212px] items-center gap-[30px] rounded-[10px] border border-orange bg-white p-2.5 ${className} `}
   >
     <img
       src={src}
       alt="Image User"
-      className="h-[4.375em] w-[4.125em] rounded-full border-[0.063em] border-green-dark"
+      className="h-[70px] w-[68px] rounded-full border border-green-dark"
       draggable="false"
     />
     <div>
-      <p className="mb-[0.625em] font-kufam text-[0.75em] font-semibold leading-[1.245] text-black-title">
+      <p className="mb-2 font-kufam text-xs font-semibold leading-tight text-black-title">
         {name}
       </p>
-      <p className="flex items-center gap-[1em] text-[0.875em] font-semibold leading-[1.245] text-black-title">
+      <p className="flex items-center gap-4 text-xs font-semibold leading-tight text-black-title">
         <span>
           <img src={IcStar} alt="Rating" className="inline-block" />
         </span>
