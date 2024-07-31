@@ -1,27 +1,48 @@
 import { useEffect, useState } from "react";
 
 import clsx from "clsx";
-import PropTypes from "prop-types";
 
-import Button from "../ui/Button";
+import { navLink } from "../../data/nav-link";
 import Container from "../ui/Container";
+import CustomButton from "../ui/CustomButton";
 import IcClose from "/icons/ic_close.svg";
 import IcMenu from "/icons/ic_menu.svg";
 import Logo from "/logo_txt.svg";
 
 const Navbar = () => {
+  const sectionDefault = navLink[0].href.replace("#", "");
+
+  const [active, setActive] = useState(sectionDefault);
   const [showMenu, setShowMenu] = useState(false);
   const [colorNavbar, setColorNavbar] = useState(false);
 
-  const changeBackgroundColorNavbar = () => {
-    if (window.scrollY >= 64) {
-      setColorNavbar(true);
-    } else {
-      setColorNavbar(false);
-    }
-  };
+  useEffect(() => {
+    const setActiveWhenScroll = () => {
+      const sections = document.querySelectorAll("section");
+      let currentSection = sectionDefault;
+
+      sections.forEach((section) => {
+        if (window.scrollY >= section.offsetTop - 200) {
+          currentSection = section.id;
+        }
+      });
+
+      setActive(currentSection);
+    };
+
+    window.addEventListener("scroll", setActiveWhenScroll);
+    return () => window.removeEventListener("scroll", setActiveWhenScroll);
+  }, [sectionDefault]);
 
   useEffect(() => {
+    const changeBackgroundColorNavbar = () => {
+      if (window.scrollY >= 64) {
+        setColorNavbar(true);
+      } else {
+        setColorNavbar(false);
+      }
+    };
+
     window.addEventListener("scroll", changeBackgroundColorNavbar);
     return () => {
       window.removeEventListener("scroll", changeBackgroundColorNavbar);
@@ -40,6 +61,12 @@ const Navbar = () => {
     };
   }, [showMenu]);
 
+  const handleClick = (e, sectionId) => {
+    e.preventDefault();
+    setActive(sectionId);
+    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav
       className={clsx("sticky top-0 z-50 mt-6 py-4 lg:mt-16", {
@@ -47,27 +74,34 @@ const Navbar = () => {
       })}
     >
       <Container className="flex items-center justify-between">
-        <img src={Logo} alt="Logo Al-Nasr" className="w-20 lg:w-24 xl:w-auto" />
+        <a href="/">
+          <img
+            src={Logo}
+            alt="Logo Al-Nasr"
+            className="w-20 lg:w-24 xl:w-auto"
+          />
+        </a>
         <div className="hidden lg:block">
-          <ul className="flex flex-1 items-center gap-11 text-base font-medium leading-[0.64] text-black-nav-menu xl:text-xl">
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">About Us</a>
-            </li>
-            <li>
-              <a href="">Package</a>
-            </li>
-            <li>
-              <a href="">Facilities</a>
-            </li>
-            <li>
-              <a href="">Gallery</a>
-            </li>
+          <ul className="flex flex-1 items-center gap-11">
+            {navLink.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.href}
+                  onClick={(e) => handleClick(e, link.href.replace("#", ""))}
+                  className={clsx(
+                    "font-medium leading-[0.64] text-black-nav-menu transition-colors duration-300 hover:text-orange xl:text-xl",
+                    {
+                      "text-orange": link.href.replace("#", "") === active,
+                    },
+                  )}
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
-        <Button className="hidden lg:block">Contact us</Button>
+        <CustomButton className="hidden lg:block">Contact us</CustomButton>
         <button
           className="lg:hidden"
           onClick={() => setShowMenu((showMenu) => !showMenu)}
@@ -98,33 +132,25 @@ const Navbar = () => {
         </button>
         <div className="w-full overflow-y-auto">
           <ul className="mb-4 flex w-full flex-col gap-4">
-            <NavbarMenuMobile href="" text="Home" />
-            <NavbarMenuMobile href="" text="About Us" />
-            <NavbarMenuMobile href="" text="Package" />
-            <NavbarMenuMobile href="" text="Facilities" />
-            <NavbarMenuMobile href="" text="Gallery" />
+            {navLink.map((link, index) => (
+              <li key={index}>
+                <a
+                  href={link.href}
+                  className={clsx(
+                    "block w-full rounded-lg bg-green px-4 py-4 text-green-dark",
+                    { "text-orange": link.href.replace("#", "") === active },
+                  )}
+                >
+                  {link.text}
+                </a>
+              </li>
+            ))}
           </ul>
-          <Button>Contact us</Button>
+          <CustomButton>Contact us</CustomButton>
         </div>
       </div>
     </nav>
   );
-};
-
-const NavbarMenuMobile = ({ text, href }) => (
-  <li>
-    <a
-      href={href}
-      className="block w-full rounded-lg bg-green px-4 py-4 text-green-dark"
-    >
-      {text}
-    </a>
-  </li>
-);
-
-NavbarMenuMobile.propTypes = {
-  text: PropTypes.string,
-  href: PropTypes.string,
 };
 
 export default Navbar;
