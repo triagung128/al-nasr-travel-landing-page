@@ -136,6 +136,7 @@ const Navbar = () => {
               <li key={index}>
                 <a
                   href={link.href}
+                  onClick={() => setShowMenu((showMenu) => !showMenu)}
                   className={clsx(
                     "block w-full rounded-lg bg-green px-4 py-4 text-green-dark",
                     { "text-orange": link.href.replace("#", "") === active },
