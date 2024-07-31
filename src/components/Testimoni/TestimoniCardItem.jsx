@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 import IcStar from "/icons/ic_star.svg";
 
-const TestimoniCard = ({ data }) => (
+const TestimoniCardItem = ({ data }) => (
   <div className="flex gap-5 rounded-[10px] bg-white px-[26px] py-5 shadow-[0_2px_8px_0_rgba(0,0,0,0.12)]">
     <div className="w-[100px]">
       <img
@@ -34,8 +34,8 @@ const TestimoniCard = ({ data }) => (
   </div>
 );
 
-TestimoniCard.propTypes = {
+TestimoniCardItem.propTypes = {
   data: PropTypes.object,
 };
 
-export default TestimoniCard;
+export default TestimoniCardItem;

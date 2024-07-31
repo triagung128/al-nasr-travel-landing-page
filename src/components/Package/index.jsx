@@ -1,12 +1,14 @@
-import Airways from "../Airways";
+import { airwaysData } from "../../data/package-data";
+import { packageData } from "../../data/package-data";
 import Container from "../ui/Container";
+import PackageAirwaysContent from "./PackageAirwaysContent";
 import PackageContent from "./PackageContent";
 
 const Package = () => (
-  <section className="py-[78px]">
+  <section id="package" className="scroll-mt-24 py-[78px]">
     <Container>
-      <PackageContent />
-      <Airways />
+      <PackageContent data={packageData} />
+      <PackageAirwaysContent data={airwaysData} />
     </Container>
   </section>
 );
