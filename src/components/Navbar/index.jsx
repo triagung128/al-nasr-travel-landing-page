@@ -79,6 +79,8 @@ const Navbar = () => {
             src={Logo}
             alt="Logo Al-Nasr"
             className="w-20 md:w-24 lg:w-28 xl:w-auto"
+            width={143}
+            height={71}
           />
         </a>
         <div className="hidden lg:block">
@@ -103,10 +105,17 @@ const Navbar = () => {
         </div>
         <CustomButton className="hidden lg:block">Contact us</CustomButton>
         <button
+          aria-label="Show Menu Navigation"
           className="lg:hidden"
           onClick={() => setShowMenu((showMenu) => !showMenu)}
         >
-          <img src={IcMenu} className="sm:w-8" />
+          <img
+            src={IcMenu}
+            className="sm:w-8"
+            alt="Menu Icon"
+            width={24}
+            height={24}
+          />
         </button>
       </Container>
 
@@ -127,8 +136,17 @@ const Navbar = () => {
           },
         )}
       >
-        <button onClick={() => setShowMenu((showMenu) => !showMenu)}>
-          <img src={IcClose} className="sm:w-8" />
+        <button
+          aria-label="Close Menu"
+          onClick={() => setShowMenu((showMenu) => !showMenu)}
+        >
+          <img
+            src={IcClose}
+            className="sm:w-8"
+            alt="Close Icon"
+            width={24}
+            height={24}
+          />
         </button>
         <div className="w-full overflow-y-auto">
           <ul className="mb-4 flex w-full flex-col gap-4">

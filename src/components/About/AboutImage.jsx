@@ -14,6 +14,7 @@ const AboutImage = () => (
       className="absolute left-1/2 top-0 h-[91%] w-[85%] -translate-x-1/2 rounded-[20px] object-cover sm:left-0 sm:w-[79.1%] sm:-translate-x-0"
       draggable="false"
     />
+
     <TestimoniAboutImage
       src={ImgUser4}
       rating={4.8}
@@ -26,6 +27,7 @@ const AboutImage = () => (
       name="Sahrul Alqani"
       className="absolute bottom-[16.1%] right-0 sm:right-[9.9%]"
     />
+
     <img
       src={Logo}
       alt="Logo Text"
@@ -51,7 +53,13 @@ const TestimoniAboutImage = ({ src, rating, name, className }) => (
       </p>
       <p className="flex items-center gap-4 text-xs font-semibold leading-tight text-black-title">
         <span>
-          <img src={IcStar} alt="Rating" className="inline-block" />
+          <img
+            src={IcStar}
+            alt="Rating"
+            className="inline-block"
+            width={18}
+            height={18}
+          />
         </span>
         {rating.toString()}
       </p>

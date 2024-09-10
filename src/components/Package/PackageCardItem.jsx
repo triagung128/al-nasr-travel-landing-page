@@ -8,7 +8,10 @@ const PackageCardItem = ({ data = {} }) => {
           <img
             src={data.image}
             alt={data.name}
-            className="max-w-full object-cover"
+            className="h-auto max-w-full object-cover"
+            width={622}
+            height={476}
+            loading="lazy"
           />
         </p>
         <div className="mb-5 mt-4 flex items-center justify-between pl-[26px]">
@@ -33,10 +36,16 @@ const PackageCardItem = ({ data = {} }) => {
           </p>
           <div className="mb-5 flex flex-wrap gap-5 sm:gap-3 lg:gap-5">
             {data.facilities.map((facility, index) => (
-              <img key={index} src={facility.icon} alt={facility.name} />
+              <img
+                key={index}
+                src={facility.icon}
+                alt={facility.name}
+                width={36}
+                height={36}
+              />
             ))}
           </div>
-          <button className="cursor-pointer rounded-[5px] border border-orange bg-white px-[30px] py-4 text-xs font-semibold leading-[0.64] text-orange">
+          <button className="cursor-pointer rounded-[5px] border border-orange bg-white px-[30px] py-4 text-xs font-semibold leading-[0.64] text-orange hover:bg-orange hover:text-black-button">
             View Detail
           </button>
         </div>

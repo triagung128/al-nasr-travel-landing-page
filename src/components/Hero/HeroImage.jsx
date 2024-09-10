@@ -11,14 +11,15 @@ const HeroImage = () => (
       src={ImgHero}
       alt="Image Hero"
       className="absolute right-1/2 top-1/2 -z-10 h-[80%] w-[85%] -translate-y-1/2 translate-x-1/2 rounded-[10px] border-[1.5px] border-orange object-cover sm:right-[8.8%] sm:top-0 sm:h-[90.8%] sm:w-[74.1%] sm:-translate-y-0 sm:translate-x-0"
+      loading="lazy"
     />
+
     <TestimoniHeroImage
       src={ImgUser2}
       testimoniText="The most amazing city of Mecca"
       name="Mohammad Qassem"
       className="absolute bottom-0 left-0"
     />
-
     <TestimoniHeroImage
       src={ImgUser1}
       testimoniText="Let's worship as good Muslims"

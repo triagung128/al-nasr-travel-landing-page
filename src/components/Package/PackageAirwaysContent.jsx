@@ -9,7 +9,7 @@ const PackageAirwaysContent = ({ data }) => (
     <TitleText className="mb-2 text-center text-[32px]">{data.title}</TitleText>
     <SubtitleText className="mb-4 text-center">{data.subtitle}</SubtitleText>
     <div className="flex w-fit items-center gap-2 rounded-full bg-green px-5 py-2.5">
-      <img src={IcStar} alt="Rating" />
+      <img src={IcStar} alt="Rating" width={18} height={18} />
       <p className="text-xl font-medium text-green-dark">
         {data.rating.toFixed(1)} Rating
       </p>
@@ -20,6 +20,8 @@ const PackageAirwaysContent = ({ data }) => (
           key={index}
           src={item.logo}
           alt={item.name}
+          width={item.width}
+          height={item.height}
           className="block h-16 w-auto"
         />
       ))}

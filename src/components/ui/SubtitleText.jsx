@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
 
 const SubtitleText = ({ children, className }) => (
-  <h4
+  <p
     className={`text-xl font-semibold leading-[1.5] text-black-content sm:text-2xl sm:leading-[1.5] ${className}`}
   >
     {children}
-  </h4>
+  </p>
 );
 
 SubtitleText.propTypes = {

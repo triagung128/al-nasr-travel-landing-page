@@ -9,19 +9,19 @@ export const footerLink = {
       label: "Quick Link",
       links: [
         {
-          href: "#",
+          href: "#about",
           text: "About Us",
         },
         {
-          href: "#",
-          text: "Flight Accommodation",
+          href: "#package",
+          text: "Package",
         },
         {
-          href: "#",
+          href: "#facilities",
           text: "Facilities",
         },
         {
-          href: "#",
+          href: "#gallery",
           text: "Gallery",
         },
       ],
@@ -30,19 +30,19 @@ export const footerLink = {
       label: "Package Umrah",
       links: [
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Umrah Bronze",
         },
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Umrah Silver",
         },
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Umrah Gold",
         },
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Umrah Priority",
         },
       ],
@@ -51,15 +51,15 @@ export const footerLink = {
       label: "Package Hajj",
       links: [
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Hajj Diamond",
         },
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Hajj Platinum",
         },
         {
-          href: "#",
+          href: "#package",
           text: "Al Nasr Hajj Priority",
         },
       ],

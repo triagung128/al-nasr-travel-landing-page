@@ -12,7 +12,7 @@ const HeroContent = () => (
     </TitleText>
     <SubtitleText className="mb-8 xl:max-w-[645px]">
       Facilitate your Umrah pilgrimage with us, we already have hundreds of
-      thousands of customers, you can go for Umrah to Mecca and Medina
+      thousands of customers, you can go for Umrah to Mecca and Medina.
     </SubtitleText>
     <CustomButton>Contact us</CustomButton>
   </div>

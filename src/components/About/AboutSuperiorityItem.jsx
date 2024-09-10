@@ -4,7 +4,7 @@ import SubtitleText from "../ui/SubtitleText";
 
 const AboutSuperiorityItem = ({ icon, text }) => (
   <div className="flex items-center gap-5">
-    <img src={icon} alt="ic_flight" className="w-9" />
+    <img src={icon} alt="ic_flight" className="w-9" width={36} height={36} />
     <SubtitleText>{text}</SubtitleText>
   </div>
 );

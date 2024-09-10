@@ -166,22 +166,32 @@ export const airwaysData = {
     {
       name: "Garuda Indonesia",
       logo: LogoGarudaIndonesia,
+      width: 288,
+      height: 77,
     },
     {
       name: "Qatar Airways",
       logo: LogoQatarAirways,
+      width: 226,
+      height: 77,
     },
     {
       name: "Fly Emirates",
       logo: LogoFlyEmirates,
+      width: 137,
+      height: 77,
     },
     {
       name: "Saudia Airlines",
       logo: LogoSaudiaAirlines,
+      width: 326,
+      height: 77,
     },
     {
       name: "Lion Air",
       logo: LogoLionAir,
+      width: 295,
+      height: 77,
     },
   ],
 };
